@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-function handleFormSubmission() {
+async function handleFormSubmission() {
     // Collect form data
     const formData = collectFormData();
     
@@ -71,30 +71,45 @@ function handleFormSubmission() {
     submitButton.textContent = '提交中...';
     submitButton.disabled = true;
     
-    // Simulate submission (in real app, this would be an API call)
-    setTimeout(() => {
+    try {
+        // Submit to API
+        const result = await uwDateAPIWithFallback.submitReview(formData);
+        
         // Reset button
         submitButton.textContent = originalText;
         submitButton.disabled = false;
         
         // Show success message
-        showSubmissionSuccess();
+        showSubmissionSuccess(result);
         
         // Clear form
         document.getElementById('reviewForm').reset();
         document.getElementById('charCount').textContent = '0';
         
         // Reset tag styling
-        document.querySelectorAll('.tag-checkbox').forEach(label => {
-            if (label.classList.contains('positive')) {
-                label.style.background = '#f8fdf8';
-                label.style.borderColor = 'transparent';
-            } else if (label.classList.contains('negative')) {
-                label.style.background = '#fffafa';
-                label.style.borderColor = 'transparent';
-            }
-        });
-    }, 2000);
+        resetTagStyling();
+        
+    } catch (error) {
+        // Reset button
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+        
+        // Show error message
+        alert(`提交失败：${error.message}\n\n请检查网络连接或稍后重试。`);
+        console.error('Submission error:', error);
+    }
+}
+
+function resetTagStyling() {
+    document.querySelectorAll('.tag-checkbox').forEach(label => {
+        if (label.classList.contains('positive')) {
+            label.style.background = '#f8fdf8';
+            label.style.borderColor = 'transparent';
+        } else if (label.classList.contains('negative')) {
+            label.style.background = '#fffafa';
+            label.style.borderColor = 'transparent';
+        }
+    });
 }
 
 function collectFormData() {
@@ -179,18 +194,27 @@ function validateSubmissionForm(formData) {
     return errors;
 }
 
-function showSubmissionSuccess() {
+function showSubmissionSuccess(result) {
     // Create success modal
     const modal = document.createElement('div');
     modal.className = 'success-modal';
+    
+    const isDemo = result && result.isDemo;
+    const reviewId = result && result.reviewId ? result.reviewId : '未知';
+    
     modal.innerHTML = `
         <div class="modal-content">
             <div class="modal-header">
-                <h3>提交成功！</h3>
+                <h3>${isDemo ? '演示提交成功！' : '提交成功！'}</h3>
             </div>
             <div class="modal-body">
-                <p>您的评价已成功提交，我们将在30分钟内完成审核。</p>
-                <p>审核通过后，评价将在网站上展示。</p>
+                ${isDemo ? 
+                    `<p><strong>演示模式：</strong>您的评价已记录在本地浏览器中。</p>
+                     <p>在实际部署时，评价将保存到数据库并经过人工审核。</p>` :
+                    `<p>您的评价已成功提交，我们将在30分钟内完成审核。</p>
+                     <p>审核通过后，评价将在网站上展示。</p>`
+                }
+                <p>评价ID: <code>${reviewId}</code></p>
                 <p>如有问题，请联系 uwdate@example.com</p>
             </div>
             <div class="modal-actions">
