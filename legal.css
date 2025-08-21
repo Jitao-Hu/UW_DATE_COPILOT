@@ -1,0 +1,260 @@
+/* Legal pages styles */
+.legal-document {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border: 1px solid #e5e5e5;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.legal-document h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.last-updated {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.legal-document section {
+    margin-bottom: 32px;
+}
+
+.legal-document h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 16px;
+    margin-top: 32px;
+    border-left: 4px solid #1976d2;
+    padding-left: 16px;
+}
+
+.legal-document h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 12px;
+    margin-top: 24px;
+}
+
+.legal-document h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 8px;
+    margin-top: 16px;
+}
+
+.legal-document p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    font-size: 15px;
+}
+
+.legal-document ul {
+    margin-bottom: 16px;
+    padding-left: 24px;
+}
+
+.legal-document li {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.legal-document strong {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Email template styling */
+.email-template {
+    background: #f8f9fa;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 16px 0;
+    font-family: 'Monaco', 'Consolas', monospace;
+    font-size: 13px;
+}
+
+.email-template h4 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: #1976d2;
+    font-family: inherit;
+}
+
+.email-template p {
+    margin-bottom: 8px;
+    color: #444;
+    font-size: 13px;
+}
+
+/* Policy footer */
+.policy-footer {
+    background: #f8f9fa;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 24px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.policy-footer p {
+    margin-bottom: 8px;
+    color: #666;
+    font-size: 14px;
+}
+
+.policy-footer p:last-child {
+    margin-bottom: 0;
+}
+
+.policy-footer strong {
+    color: #1976d2;
+    font-weight: 600;
+}
+
+/* Highlight boxes */
+.highlight-box {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    padding: 16px 20px;
+    margin: 16px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.highlight-box p {
+    margin-bottom: 8px;
+    color: #1565c0;
+}
+
+.highlight-box p:last-child {
+    margin-bottom: 0;
+}
+
+.warning-box {
+    background: #fff3e0;
+    border-left: 4px solid #ff9800;
+    padding: 16px 20px;
+    margin: 16px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.warning-box p {
+    margin-bottom: 8px;
+    color: #e65100;
+}
+
+.warning-box p:last-child {
+    margin-bottom: 0;
+}
+
+/* Table of contents (for longer documents) */
+.toc {
+    background: #f8f9fa;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 32px;
+}
+
+.toc h3 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: #1a1a1a;
+}
+
+.toc ul {
+    margin-bottom: 0;
+    list-style: none;
+    padding-left: 0;
+}
+
+.toc li {
+    margin-bottom: 4px;
+}
+
+.toc a {
+    color: #1976d2;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.toc a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .legal-document {
+        padding: 24px 20px;
+        margin: 20px 16px 40px;
+    }
+    
+    .legal-document h1 {
+        font-size: 28px;
+    }
+    
+    .legal-document h2 {
+        font-size: 20px;
+        padding-left: 12px;
+    }
+    
+    .legal-document h3 {
+        font-size: 16px;
+    }
+    
+    .legal-document ul {
+        padding-left: 20px;
+    }
+    
+    .email-template {
+        padding: 16px;
+        font-size: 12px;
+    }
+    
+    .policy-footer {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .legal-document {
+        padding: 20px 16px;
+    }
+    
+    .legal-document h1 {
+        font-size: 24px;
+    }
+    
+    .legal-document h2 {
+        font-size: 18px;
+    }
+    
+    .legal-document p,
+    .legal-document li {
+        font-size: 14px;
+    }
+    
+    .email-template {
+        padding: 12px;
+        font-size: 11px;
+    }
+}

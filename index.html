@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UW Date - 滑铁卢大学约会评价平台</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-left">
+                <img src="uw-logo.png" alt="UW Logo" class="logo">
+                <span class="site-title">UW Date</span>
+            </div>
+            <div class="nav-right">
+                <a href="index.html" class="nav-link">首页</a>
+                <a href="submit.html" class="nav-link">上传评价</a>
+                <span class="beta-tag">Beta</span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>UW Dating Copilot</h1>
+            <p class="subtitle">前车之鉴，近在眼前</p>
+            <a href="submit.html" class="cta-button">贡献评价</a>
+        </section>
+
+        <section class="stats">
+            <p>已收录 <strong>47</strong> 条评价 · 上次更新：2025-01-15 14:32</p>
+        </section>
+
+        <section class="search-section">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="输入姓名搜索..." class="search-input">
+                <button onclick="searchReviews()" class="search-button">搜索</button>
+            </div>
+            <p class="search-disclaimer">
+                点击"搜索"即表示您理解：结果可能指向真实个人；内容为用户主观意见，准确性与完整性不作保证。
+            </p>
+        </section>
+
+        <section class="mission">
+            <h2>我们的使命</h2>
+            <p>吃饭这种小事，我们都会提前去大众点评看看评价，约会前为什么不也这样呢？<br>
+            分享您的Dating点评，获得极致的隐私保护，浏览经过审查的真实反馈。</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <h4>精准可靠</h4>
+                    <p>基于个人真实经历的主观评价；设有严谨的证据审核流程。</p>
+                </div>
+                <div class="feature">
+                    <h4>隐私保护</h4>
+                    <p>敏感信息自动去除，尊重个人边界与合规要求</p>
+                </div>
+                <div class="feature">
+                    <h4>高效简洁</h4>
+                    <p>最快30分钟极速审核，无广告，无推送</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="privacy-notice">
+            <h3>隐私提示</h3>
+            <p>首页与浏览页不主动公开姓名；仅展示描述与经隐私化处理的证据缩略图。</p>
+            <p>仅在精准姓名匹配搜索结果中出现全名；不提供联想、模糊或部分匹配。</p>
+            <p>所有提交先由系统进行敏感信息遮盖与安全检查，随后进入人工复核。</p>
+        </section>
+
+        <section class="featured-reviews">
+            <h2>UW 甄选</h2>
+            <p class="subtitle">仅展示部分精选内容</p>
+            
+            <div class="review-card">
+                <div class="review-header">
+                    <h3>王***</h3>
+                    <div class="tags">
+                        <span class="tag negative">PUA</span>
+                        <span class="tag negative">不可靠</span>
+                    </div>
+                </div>
+                <div class="review-content">
+                    <p>CS专业，在某科技公司实习，相识于某相亲APP，开始各种甜言蜜语说要一起去DC看樱花，等到确立关系后就开始冷淡，说自己压力大要专心学习，但朋友圈经常看到他和其他女生出去玩。这种变化仅发生在两周内，典型的渣男行为...</p>
+                </div>
+                <a href="#" class="view-details">查看详情 →</a>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <h3>李***</h3>
+                    <div class="tags">
+                        <span class="tag positive">忠诚</span>
+                        <span class="tag positive">情绪稳定</span>
+                        <span class="tag positive">真诚付出</span>
+                        <span class="tag positive">幽默</span>
+                    </div>
+                </div>
+                <div class="review-content">
+                    <p>Math专业的学霸，人很好这是确凿的，室友见了都说好。他说话有趣，经常逗得人捧腹，又极关心我的学习，三句话不离"assignment"二字。虽然有时候太专注于学习，但这也是UW学生的通病。期末期间会给我买Tim Hortons，还会陪我在DC图书馆刷夜...</p>
+                </div>
+                <a href="#" class="view-details">查看详情 →</a>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <h3>张***</h3>
+                    <div class="tags">
+                        <span class="tag negative">出轨</span>
+                        <span class="tag negative">冷暴力</span>
+                    </div>
+                </div>
+                <div class="review-content">
+                    <p>ECE专业，co-op在多伦多，long distance期间至少脚踏两条船，在滑铁卢和女生A交往，同时在多伦多与女生B约会，分别承诺要serious relationship。对我经常已读不回，说是忙co-op，结果Instagram story经常看到他和别人出去玩...</p>
+                </div>
+                <a href="#" class="view-details">查看详情 →</a>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <h3>陈***</h3>
+                    <div class="tags">
+                        <span class="tag positive">忠诚</span>
+                        <span class="tag positive">情绪稳定</span>
+                        <span class="tag positive">真诚付出</span>
+                    </div>
+                </div>
+                <div class="review-content">
+                    <p>我是某某的前女友，实名推荐他，他真的是一个特别好的ex，活力满满，精力十足，超爱学习，前人栽树后人乘凉，我已经把他的procrastination治好了，推荐给下一任！AFM专业，未来CPA...</p>
+                </div>
+                <a href="#" class="view-details">查看详情 →</a>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <h3>赵***</h3>
+                    <div class="tags">
+                        <span class="tag negative">出轨</span>
+                        <span class="tag negative">冷暴力</span>
+                        <span class="tag negative">骗钱</span>
+                    </div>
+                </div>
+                <div class="review-content">
+                    <p>去年这个渣男在开学仅不到一个月的时候，和另一个有男朋友的女生在宿舍发生关系，随后的一个月两个人一直在微信互发不当照片。我知道这些事是因为我看了他的手机。聊天记录中他还和朋友说："她太幼稚了，太naive了"。问题是，我是某天忽然变幼稚的？？？...</p>
+                </div>
+                <a href="#" class="view-details">查看详情 →</a>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <h3>M***</h3>
+                    <div class="tags">
+                        <span class="tag neutral">自愿投稿</span>
+                    </div>
+                </div>
+                <div class="review-content">
+                    <p>此人自愿投稿：去MATH 137上课，到了发现大家都在做卷子，做完才发现这不是Practice是Midterm。昨天还熬夜凌晨两点在MC刷题，压根没复习，还看了两集动漫，今天差点没来还迟到了！</p>
+                </div>
+                <a href="#" class="view-details">查看详情 →</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>UW Date</h3>
+                <p>独立约会评价平台</p>
+                <p><strong>重要声明：</strong>本项目与滑铁卢大学(UW)或任何教育机构无关联。</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>快速导航</h4>
+                <a href="index.html">首页</a>
+                <a href="search.html">搜索记录</a>
+                <a href="submit.html">提交评价</a>
+            </div>
+            
+            <div class="footer-section">
+                <h4>法律文档</h4>
+                <a href="terms.html">服务条款</a>
+                <a href="privacy.html">隐私政策</a>
+                <a href="appeal.html">申诉流程</a>
+            </div>
+            
+            <div class="footer-section">
+                <h4>联系支持</h4>
+                <p>uwdate@example.com</p>
+                <p>技术支持 · 申诉撤下 · 意见反馈</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2025 UW Date · 独立项目</p>
+            <p>内容由用户提交，仅供参考，不构成事实陈述或建议。详见《服务条款》与《隐私政策》。</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
